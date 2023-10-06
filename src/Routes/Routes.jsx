@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../app";
 import Results from "../components/Results";
 import Welcome from "../components/Welcome";
+import SearchResult from "../components/results/SearchResult";
+import Videos from "../components/results/VideosResult";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -13,11 +15,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/search',
-                element: <Results/>
+                element: <SearchResult/>
             },
             {
                 path: '/videos',
-                element: <Results/>
+                element: <Videos/>
             },
             {
                 path: '/news',
