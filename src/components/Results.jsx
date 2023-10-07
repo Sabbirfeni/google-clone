@@ -2,7 +2,8 @@ import React, { useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import { useResultContext } from '../contexts/ResultProviderContext'
 import Loading from './loader/Loading'
-import Error from './Error'
+import Error from './erorr/Error'
+
 
 function Results() {
     const { results, loading, getResult, searchTerm, error } = useResultContext()

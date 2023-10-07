@@ -6,7 +6,7 @@ export const ResultContextProvider = ({ children }) => {
     const [ results, setResults ] = useState(null)
     const [ loading, setLoading ] = useState(true)
     const [ error, setError ] = useState(null)
-    const [ searchTerm, setSearchTerm ] = useState('fish')
+    const [ searchTerm, setSearchTerm ] = useState(null)
     const [ darkTheme, setDarkTheme ] = useState(false);
 
     const getResult = async (type) => {
@@ -16,7 +16,7 @@ export const ResultContextProvider = ({ children }) => {
             const response = await fetch(`${baseURL}${type}`, {
                 method: 'GET',
                 headers: {
-                    'X-RapidAPI-Key': 'bccbb31331mshe193e9bf9987422p15b067jsnc8127abec52d',
+                    'X-RapidAPI-Key': '74fd127e0cmsh517ea480a997086p1915eejsn1efa3cafe7bc',
                     'X-RapidAPI-Host': 'google-search72.p.rapidapi.com'
                   }
             });
@@ -25,10 +25,7 @@ export const ResultContextProvider = ({ children }) => {
             setLoading(false)
         } catch(error) {
             setError(error.message)
-        }
-        
-        
-        
+        }  
     }
 
     const values = {
@@ -39,7 +36,8 @@ export const ResultContextProvider = ({ children }) => {
         getResult,
         darkTheme,
         setDarkTheme,
-        error
+        error,
+        setLoading
     }
 
     return (
