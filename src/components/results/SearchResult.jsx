@@ -7,15 +7,14 @@ import Error from '../erorr/Error'
 function SearchResult() {
     const { results, loading, getResult, searchTerm, error } = useResultContext()
     useEffect(() => {
-        getResult(`/search?q=${searchTerm} videos`)  
+        getResult(`/search?q=${searchTerm} videos`)
     }, [searchTerm])
-    console.log(results)
   return (
     <>
     {loading && <Loading/>}
     {results?.message && <Error/>}
     {results?.items &&
-        <div className='mt-36 flex flex-wrap justify-between space-y-6 sm:px-20 lg:px-56'>
+        <div className='mt-40 flex flex-wrap justify-between space-y-6 sm:px-20 lg:px-56'>
             {results.items.map(({ link, title, snippet }, index) => (
                 <div key={index} className='w-full md:w-2/5'>
                     <a href={link} target='_blank' rel='noreferrer'>
